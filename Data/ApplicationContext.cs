@@ -22,7 +22,6 @@ namespace CursoEFCore.Data
             //Maneira de configurar todas as entidades de um assembly, a serem criadas.
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationContext).Assembly);
 
-
             //Maneira de configurar as entidades a serem criadas sobscrevendo o OnModelCreating.
             //modelBuilder.Entity<Cliente>(p =>
             //{
