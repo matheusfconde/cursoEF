@@ -9,6 +9,7 @@ C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashC
 C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
@@ -37,7 +38,6 @@ C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\runtimes\win-x86\na
 C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\_estudos\desenvolvedor.io\CursoEF\obj\Debug\netcoreapp3.1\CursoEFCore.csprojAssemblyReference.cache
 C:\_estudos\desenvolvedor.io\CursoEF\obj\Debug\netcoreapp3.1\CursoEFCore.AssemblyInfoInputs.cache
 C:\_estudos\desenvolvedor.io\CursoEF\obj\Debug\netcoreapp3.1\CursoEFCore.AssemblyInfo.cs
 C:\_estudos\desenvolvedor.io\CursoEF\obj\Debug\netcoreapp3.1\CursoEFCore.csproj.CoreCompileInputs.cache
