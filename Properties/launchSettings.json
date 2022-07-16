@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CursoEFCore": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

@@ -45,3 +45,7 @@ C:\_estudos\desenvolvedor.io\CursoEF\obj\Debug\netcoreapp3.1\CursoEFCore.csproj.
 C:\_estudos\desenvolvedor.io\CursoEF\obj\Debug\netcoreapp3.1\CursoEFCore.dll
 C:\_estudos\desenvolvedor.io\CursoEF\obj\Debug\netcoreapp3.1\CursoEFCore.pdb
 C:\_estudos\desenvolvedor.io\CursoEF\obj\Debug\netcoreapp3.1\CursoEFCore.genruntimeconfig.cache
+C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Configuration.dll
+C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Console.dll
+C:\_estudos\desenvolvedor.io\CursoEF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\_estudos\desenvolvedor.io\CursoEF\obj\Debug\netcoreapp3.1\CursoEFCore.csprojAssemblyReference.cache

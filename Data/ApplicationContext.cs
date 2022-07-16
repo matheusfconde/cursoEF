@@ -1,15 +1,24 @@
 ﻿using CursoEFCore.Data.Configurations;
 using CursoEFCore.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace CursoEFCore.Data
 {
     public class ApplicationContext : DbContext
     {
-        //public DbSet<Pedido> Pedidos { get; set; } // Utilizar DBSet ou reescrever modelBuilder.
+        private static readonly ILoggerFactory _logger = LoggerFactory.Create(p => p.AddConsole()); // Log na aplicação.
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-            optionsBuilder.UseSqlServer("Server = 127.0.0.1, 1433; Database = CursoEFCore; User Id = SA; Password = R00t1234!;");
+        public DbSet<Pedido> Pedidos { get; set; } // Utilizar DBSet ou reescrever modelBuilder.
+        public DbSet<Produto> Produtos { get; set; } // Utilizar DBSet ou reescrever modelBuilder.
+        public DbSet<Cliente> Clientes { get; set; } // Utilizar DBSet ou reescrever modelBuilder.
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLoggerFactory(_logger).
+                EnableSensitiveDataLogging().
+                UseSqlServer("Server = 127.0.0.1, 1433; Database = CursoEFCore; User Id = SA; Password = R00t1234!;");
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
