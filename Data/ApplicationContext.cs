@@ -2,6 +2,8 @@
 using CursoEFCore.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Linq;
 
 namespace CursoEFCore.Data
 {
@@ -17,7 +19,13 @@ namespace CursoEFCore.Data
         {
             optionsBuilder.UseLoggerFactory(_logger).
                 EnableSensitiveDataLogging().
-                UseSqlServer("Server = 127.0.0.1, 1433; Database = CursoEFCore; User Id = SA; Password = R00t1234!;");
+                UseSqlServer("Server = 127.0.0.1, 1433; Database = CursoEFCore; User Id = SA; Password = R00t1234!;",
+                p => p.EnableRetryOnFailure(
+                    maxRetryCount: 2, 
+                    maxRetryDelay: TimeSpan.FromSeconds(5), 
+                    errorNumbersToAdd: null
+                )
+                .MigrationsHistoryTable("curso_ef_core")); // por padrão tenta seis vezes
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -30,6 +38,7 @@ namespace CursoEFCore.Data
 
             //Maneira de configurar todas as entidades de um assembly, a serem criadas.
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationContext).Assembly);
+            MapearPropriedadesEsquecidas(modelBuilder);
 
             //Maneira de configurar as entidades a serem criadas sobscrevendo o OnModelCreating.
             //modelBuilder.Entity<Cliente>(p =>
@@ -78,6 +87,22 @@ namespace CursoEFCore.Data
             //    p.Property(p => p.Desconto).IsRequired();
             //});
 
+        }
+
+        private static void MapearPropriedadesEsquecidas(ModelBuilder modelBuilder)
+        {
+            foreach (var entity in modelBuilder.Model.GetEntityTypes())
+            {
+                var properties = entity.GetProperties().Where(p => p.ClrType == typeof(string)); //filtrando as propriedades do tipo string.
+
+                foreach (var property in properties)
+                {
+                    if (string.IsNullOrEmpty(property.GetColumnType())
+                            && !property.GetMaxLength().HasValue)
+                            property.SetMaxLength(100);
+                            property.SetColumnType("VARCHAR(100)");
+                }
+            }
         }
     }
 }
